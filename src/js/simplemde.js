@@ -1484,6 +1484,7 @@ SimpleMDE.prototype.render = function(el) {
 	this.codemirror = CodeMirror.fromTextArea(el, {
 		mode: mode,
 		gutters: ["CodeMirror-lint-markers"],
+		lint: true,
 		backdrop: backdrop,
 		theme: "paper",
 		tabSize: (options.tabSize != undefined) ? options.tabSize : 2,
