@@ -8,11 +8,13 @@ require("codemirror/mode/markdown/markdown.js");
 require("codemirror/addon/mode/overlay.js");
 require("codemirror/addon/display/placeholder.js");
 require("codemirror/addon/selection/mark-selection.js");
+require("codemirror/addon/lint/lint.js");
 require("codemirror/mode/gfm/gfm.js");
 require("codemirror/mode/xml/xml.js");
 var CodeMirrorSpellChecker = require("codemirror-spell-checker");
 var marked = require("marked");
 
+require("codemirror/addon/lint/lint.css")
 
 // Some variables
 var isMac = /Mac/.test(navigator.platform);
@@ -1481,6 +1483,7 @@ SimpleMDE.prototype.render = function(el) {
 
 	this.codemirror = CodeMirror.fromTextArea(el, {
 		mode: mode,
+		gutters: ["CodeMirror-lint-markers"],
 		backdrop: backdrop,
 		theme: "paper",
 		tabSize: (options.tabSize != undefined) ? options.tabSize : 2,
