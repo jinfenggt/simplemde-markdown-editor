@@ -14,6 +14,11 @@ require("codemirror/mode/xml/xml.js");
 var CodeMirrorSpellChecker = require("codemirror-spell-checker");
 var marked = require("marked");
 
+require("codemirror/addon/dialog/dialog.css");
+require("codemirror/addon/dialog/dialog.js");
+require("codemirror/addon/search/search.js");
+require("codemirror/addon/search/searchcursor.js");
+
 require("codemirror/addon/lint/lint.css")
 
 // Some variables
@@ -1453,6 +1458,7 @@ SimpleMDE.prototype.render = function(el) {
 	keyMaps["Enter"] = "newlineAndIndentContinueMarkdownList";
 	keyMaps["Tab"] = "tabAndIndentMarkdownList";
 	keyMaps["Shift-Tab"] = "shiftTabAndUnindentMarkdownList";
+	keyMaps["Alt-F"] = "findPersistent";
 	keyMaps["Esc"] = function(cm) {
 		if(cm.getOption("fullScreen")) toggleFullScreen(self);
 	};
